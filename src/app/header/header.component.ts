@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +8,17 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.less'
 })
 export class HeaderComponent {
+
+  @Input() activeItem:string="Home";
+
+  classMenuItem(menuItem:string){
+    let classResultItem:string=""
+    if(menuItem == this.activeItem){
+      classResultItem = "rd-nav-item  active";
+    }else{
+      classResultItem = "rd-nav-item";
+    }
+    return classResultItem;
+  }
 
 }
