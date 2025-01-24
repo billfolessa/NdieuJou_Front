@@ -1,0 +1,40 @@
+.property-item{
+    .property-detail{
+       display: flex;
+       flex-direction: column;
+       .description{
+           display: -webkit-box;
+           -webkit-line-clamp: 2;
+           -webkit-box-orient: vertical;
+           overflow: hidden;
+       }
+       .illustration-plus{
+           flex: 1;
+           align-items: flex-end;
+           margin-top: initial;
+       }
+       li{
+           font-size: initial;
+       }
+       .post-modern-title{
+           margin-top: 5px;
+       }
+    }
+}
+
+@media (max-width: 767px) {
+   .property-item{
+       .illustration{
+           margin-bottom: 10px;
+       }
+       .property-detail{
+           flex-direction:column-reverse;
+           margin-bottom: 40px;
+
+          .illustration-plus{
+               margin-top: 0px;
+               margin-bottom: 1px;
+          }
+       }
+  }
+}
