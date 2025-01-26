@@ -2,19 +2,43 @@
     > div{
         margin-top: 40px;
     }
+    .description-empty-item{
+        flex:1;
+        text-align: center;
+    }
+    :first-child {
+        margin-top: 0px;
+    }
 }
 
 .section-filter{
-    background-color: aqua;
+    border: 2px solid darkcyan;
 
-    ::after {content: "";
-   
-        right: 0;
-        top: 50%;
-        width: 10px;
-        height: 1.5em;
-        background: #0e0f18;
-        transform: translate3d(0, -50%, 0);
+    .fix-search{
+        position: fixed;
+        top: 55px;
+    }
+
+    .accordion {
+        box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+        margin: 12px;
+    }
+    
+    .title {
+      padding: 12px;
+    }
+    
+    .content {
+      padding: 12px;
+    }
+    
+    .content-container {
+      overflow: hidden;
+      max-height: 0;
+    }
+    
+    .content-container.opened {
+      max-height: none;
     }
 }
 

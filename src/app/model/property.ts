@@ -1,8 +1,6 @@
-Property:{
-    
-}
 
-class Property{
+
+export class Property{
     description:string;
     illustration:string;
     autherIllustration:string[];

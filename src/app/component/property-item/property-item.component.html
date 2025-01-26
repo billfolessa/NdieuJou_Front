@@ -1,23 +1,19 @@
-<div class="row row-30 property-item">
+<div class="row row-30 property-item"  >
     <div class="col-md-6 illustration"><img src="images/typography-2-770x456.jpg" alt="" width="770" height="456"/>
     </div>
     <div class="col-md-6 property-detail">
-      <p class="description">Suavitate assentior vituperata eam ut, democritum voluptaria consetetur an mei. Quod maluisset pro ex, eligendi tincidunt complectitur eos ne. Ei cotidieque voluptatibus</p>
+      <p class="description">{{property.description}}</p>
       <ul class="post-modern-meta">
-        <li><a class="button-winona" href="#">$1300/mon</a></li>
-        <li>40 Sq. Ft.</li>
-        <li>2 Bedrooms</li>
+        <li><a class="button-winona" href="#"> {{ property.prix }}</a></li>
+        <li>{{ property.surface }} </li>
+        <li> {{ property.nombreChambre }} Bedrooms</li>
       </ul>
-      <span class="post-modern-title" >1808 Bolingbroke Pl, Fort Worth, TX 76140</span>
+      <span class="post-modern-title" > {{ property.adresse }}</span>
       <div class="row row-x-10 illustration-plus" data-lightgallery="group">
-        <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/gallery-original-1.jpg" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/footer-gallery-1-85x85.jpg" alt=""/>
-            <div class="thumbnail-minimal-caption"></div></a></div>
-        <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/gallery-original-2.jpg" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/footer-gallery-2-85x85.jpg" alt=""/>
-            <div class="thumbnail-minimal-caption"></div></a></div>
-        <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/gallery-original-3.jpg" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/footer-gallery-3-85x85.jpg" alt=""/>
-            <div class="thumbnail-minimal-caption"></div></a></div>
-        <div class="col-3 col-sm-4 col-md-3"><a class="thumbnail-minimal" href="images/gallery-original-4.jpg" data-lightgallery="item"><img class="thumbnail-minimal-image" src="images/footer-gallery-4-85x85.jpg" alt=""/>
-            <div class="thumbnail-minimal-caption"></div></a></div>
+        <div class="col-3 col-sm-4 col-md-3 {{ isHideItem(i) }}" *ngFor="let imageItem of property.autherIllustration; let i =index">
+            <a class="thumbnail-minimal" [href]="imageItem" data-lightgallery="item"><img class="thumbnail-minimal-image" [src]="imageItem" alt=""/>
+            <div class="thumbnail-minimal-caption"></div></a>
+        </div>
       </div>
     </div>
 </div>
