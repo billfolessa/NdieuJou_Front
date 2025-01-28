@@ -18,27 +18,52 @@
         <div class="container">
           <div class="row">
             <div class="col-md-2 section-filter"> 
-              <div class="{{fixSearch}}">
+              <div class="">
                 
                 <p>Filtre des resultats</p>
+
                 
                 <div class="accordion">
-                  <h5 class="title" (click)="activeAccordionItem(1)">Trier par</h5>
+                  <div class="title" (click)="activeAccordionItem(1)">
+                     <h5>Trier par</h5>
+                     <span class="icon novi-icon icon-md mdi mdi-chevron-down" [class.mdi-chevron-down]="!isActiveAccordionItem(1)" [class.mdi-chevron-up]="isActiveAccordionItem(1)"></span>
+                  </div>
                   <div class="content-container" [class.opened]="isActiveAccordionItem(1)">
-                    <p class="content">plus récent</p>
-                    <p class="content">plus pertinent</p>
+                    <p class="content">
+                      <input type="checkbox" (change)="filterResult($event)" name="sortAsceding"/>
+                      plus récent
+                    </p>
+                    <p class="content">
+                      <input type="checkbox"/>
+                      plus pertinent
+                    </p>
                   </div>
                 </div>
                 <div class="accordion">
-                  <h5 class="title" (click)="activeAccordionItem(2)">Date de publication</h5>
+                  <div class="title" (click)="activeAccordionItem(2)">
+                    <h5>Date de publication</h5>
+                    <span class="icon novi-icon icon-md mdi mdi-chevron-down" [class.mdi-chevron-down]="!isActiveAccordionItem(2)" [class.mdi-chevron-up]="isActiveAccordionItem(2)"></span>
+                 </div>
                   <div class="content-container " [class.opened]="isActiveAccordionItem(2)">
-                    <p class="content">dernières 24 heures</p>
-                    <p class="content">La semaine dernière</p>
-                    <p class="content">Le mois dernier</p>
+                    <p class="content">
+                      <input type="checkbox"/>
+                      dernières 24 heures
+                    </p>
+                    <p class="content">
+                      <input type="checkbox"/>
+                      La semaine dernière
+                    </p>
+                    <p class="content">
+                      <input type="checkbox"/>
+                      Le mois dernier
+                    </p>
                   </div>
                 </div>
                 <div class="accordion">
-                  <h5 class="title" (click)="activeAccordionItem(3)">Localisation</h5>
+                  <div class="title" (click)="activeAccordionItem(3)">
+                    <h5>Localisation</h5>
+                    <span class="icon novi-icon icon-md mdi mdi-chevron-down" [class.mdi-chevron-down]="!isActiveAccordionItem(3)" [class.mdi-chevron-up]="isActiveAccordionItem(3)"></span>
+                 </div>
                   <div class="content-container" [class.opened]="isActiveAccordionItem(3)">
                     <p class="content">dernières 24 heures</p>
                     <p class="content">La semaine dernière</p>
@@ -46,11 +71,24 @@
                   </div>
                 </div>
                 <div class="accordion">
-                  <h5 class="title" (click)="activeAccordionItem(4)">Catégorie</h5>
+                  <div class="title" (click)="activeAccordionItem(4)">
+                    <h5>Catégorie</h5>
+                    <span class="icon novi-icon icon-md mdi mdi-chevron-down" [class.mdi-chevron-down]="!isActiveAccordionItem(4)" [class.mdi-chevron-up]="isActiveAccordionItem(4)"></span>
+                 </div>
                   <div class="content-container" [class.opened]="isActiveAccordionItem(4)">
-                    <p class="content">Logement à louer </p>
-                    <p class="content">Propriété à vendre</p>
-                    <p class="content">Rénovation</p>
+                    
+                    <p class="content">
+                      <input type="checkbox"/>  
+                      Logement à louer 
+                    </p>
+                    <p class="content">
+                      <input type="checkbox"/>  
+                      Propriété à vendre
+                    </p>
+                    <p class="content">
+                      <input type="checkbox"/>  
+                      Rénovation
+                    </p>
                   </div>
                 </div>
 
