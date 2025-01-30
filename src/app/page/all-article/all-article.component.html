@@ -65,9 +65,28 @@
                     <span class="icon novi-icon icon-md mdi mdi-chevron-down" [class.mdi-chevron-down]="!isActiveAccordionItem(3)" [class.mdi-chevron-up]="isActiveAccordionItem(3)"></span>
                  </div>
                   <div class="content-container" [class.opened]="isActiveAccordionItem(3)">
-                    <p class="content">dernières 24 heures</p>
-                    <p class="content">La semaine dernière</p>
-                    <p class="content">Le mois dernier</p>
+                    
+                    <ul class="text-base">
+                      <li>
+                        <strong >Canada</strong> 
+                      </li>
+                      <li class="pl-2" *ngFor="let localisationItem of localisationCity; let i =index">
+                        <div class="title" (click)="activeAccordionItem(-1*i)">
+                          <input type="checkbox" (change)="filterResult($event)" [value]="localisationItem.name"/>
+                          <span class="text-title"> {{localisationItem.name}}</span>
+                          <span class="icon novi-icon icon-md mdi mdi-chevron-down" [class.mdi-chevron-down]="!isActiveAccordionItem(-1*i)" [class.mdi-chevron-up]="isActiveAccordionItem(-1*i)"></span>
+                       </div>
+                        <ul class="content-container" [class.opened]="isActiveAccordionItem(-1*i)" *ngFor="let cityitem of localisationItem.city ">
+                          <li class="pl-2">
+                            <input type="checkbox" (change)="filterResult($event)" name=""/>
+                            <span >{{cityitem}}</span>
+                          </li>
+                        </ul>
+                      </li>
+
+
+                    </ul>
+
                   </div>
                 </div>
                 <div class="accordion">
