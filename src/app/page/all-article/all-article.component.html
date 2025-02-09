@@ -1,5 +1,6 @@
 
-      <section class="section novi-background breadcrumbs-custom bg-image context-dark" style="background-image: url(images/breadcrumbs-image-1.jpg);">
+<app-header1></app-header1>
+    <section class="section novi-background breadcrumbs-custom bg-image context-dark" style="background-image: url(images/breadcrumbs-image-1.jpg);">
         <div class="breadcrumbs-custom-inner">
           <div class="container breadcrumbs-custom-container">
             <div class="breadcrumbs-custom-main">
@@ -30,11 +31,11 @@
                   </div>
                   <div class="content-container" [class.opened]="isActiveAccordionItem(1)">
                     <p class="content">
-                      <input type="checkbox" (change)="filterResult($event)" name="sortAsceding"/>
+                      <input type="checkbox" (change)="filterResult($event)" name="sortBy" value="desc"/>
                       plus récent
                     </p>
                     <p class="content">
-                      <input type="checkbox"/>
+                      <input type="checkbox" (change)="filterResult($event)" name="sortBy" value="pertinent"/>
                       plus pertinent
                     </p>
                   </div>
@@ -46,15 +47,15 @@
                  </div>
                   <div class="content-container " [class.opened]="isActiveAccordionItem(2)">
                     <p class="content">
-                      <input type="checkbox"/>
+                      <input type="checkbox" (change)="filterResult($event)" name="pDate" value="1"/>
                       dernières 24 heures
                     </p>
                     <p class="content">
-                      <input type="checkbox"/>
+                      <input type="checkbox" (change)="filterResult($event)" name="pDate" value="7"/>
                       La semaine dernière
                     </p>
                     <p class="content">
-                      <input type="checkbox"/>
+                      <input type="checkbox" (change)="filterResult($event)" name="pDate" value="30"/>
                       Le mois dernier
                     </p>
                   </div>
@@ -72,13 +73,13 @@
                       </li>
                       <li class="pl-2" *ngFor="let localisationItem of localisationCity; let i =index">
                         <div class="title" (click)="activeAccordionItem(-1*i)">
-                          <input type="checkbox" (change)="filterResult($event)" [value]="localisationItem.name"/>
+                          <input type="checkbox" (change)="filterResult($event)" name="localisation" [value]="localisationItem.name"/>
                           <span class="text-title"> {{localisationItem.name}}</span>
                           <span class="icon novi-icon icon-md mdi mdi-chevron-down" [class.mdi-chevron-down]="!isActiveAccordionItem(-1*i)" [class.mdi-chevron-up]="isActiveAccordionItem(-1*i)"></span>
                        </div>
                         <ul class="content-container" [class.opened]="isActiveAccordionItem(-1*i)" *ngFor="let cityitem of localisationItem.city ">
                           <li class="pl-2">
-                            <input type="checkbox" (change)="filterResult($event)" name=""/>
+                            <input type="checkbox" (change)="filterResult($event)" name="localisation" [value]="cityitem"/>
                             <span >{{cityitem}}</span>
                           </li>
                         </ul>
@@ -97,15 +98,15 @@
                   <div class="content-container" [class.opened]="isActiveAccordionItem(4)">
                     
                     <p class="content">
-                      <input type="checkbox"/>  
+                      <input type="checkbox"  (change)="filterResult($event)" name="category" value="location"/>  
                       Logement à louer 
                     </p>
                     <p class="content">
-                      <input type="checkbox"/>  
+                      <input type="checkbox" (change)="filterResult($event)" name="category" value="vente"/>  
                       Propriété à vendre
                     </p>
                     <p class="content">
-                      <input type="checkbox"/>  
+                      <input type="checkbox" (change)="filterResult($event)" name="category" value="renovation"/>  
                       Rénovation
                     </p>
                   </div>
@@ -121,6 +122,27 @@
               <div *ngFor="let propertiItem of listProperty">
                 <app-property-item [property]="propertiItem"></app-property-item>
               </div>
+              <div (click)="test($event)"> testt
+                <button >test</button>
+              </div>
+              
+
+              <ul>
+                <li *ngFor="let item of collection | paginate: { itemsPerPage: 5, currentPage: p }"> {{item}} </li>
+              </ul>
+                         
+              <pagination-controls (pageChange)="p = $event" ></pagination-controls>
+
+
+              <div class="row">
+                <div class="col-xs-12 col-12">
+                  <pagination [totalItems]="totalItems" [(ngModel)]="currentPage"></pagination>
+                </div>
+              </div>
+               
+              <button type="button" class="btn btn-info" (click)="setPage(3)">Set current page to: 3</button>
+
+
             </div>
           </div>
         </div>

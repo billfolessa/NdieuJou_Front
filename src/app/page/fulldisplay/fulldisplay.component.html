@@ -1,0 +1,140 @@
+
+<app-header1></app-header1>
+
+<section class="section novi-background section-lg fulldisplay">
+    <div class="container">
+      <div class="header">
+        <ul class="breadcrumbs-custom-path">
+          <li><a href="">Home</a></li>
+          <li class="active">
+            <a href="\properties">View more properties</a>
+          </li>
+          <li class="active">property display</li>
+        </ul>
+        <div class="d-flex">
+          <h1>{{ property.title }}</h1>
+          <div class="prix">
+            <span class="price">$ {{ property.prix }} / mois</span>
+          </div>
+        </div>
+        
+      </div>
+      <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse container-image">
+        <div class=" col-md-10 col-lg-6 col-xl-6 illustration-plus " data-lightgallery="group">
+          
+
+          @for (imageItem of property.autherIllustration; track idx+property.autherIllustration.length ; let idx = $index) {
+            @if(idx%2 == 0){
+              @let nextItemImage = property.autherIllustration.length <= idx+1 ? null: property.autherIllustration[idx+1];
+            <div class=" col-md-4 column-item" [class.d-none]="idx>5">
+                <div>
+                    <a class="thumbnail-minimal" [href]="imageItem" data-lightgallery="item"><img class="thumbnail-minimal-image" [src]="imageItem" alt=""/>
+                    <div class="thumbnail-minimal-caption"></div></a>
+                </div>
+                @if(nextItemImage != null){
+                  <div>
+                    <a class="thumbnail-minimal" [href]="nextItemImage" data-lightgallery="item"><img class="thumbnail-minimal-image" [src]="nextItemImage" alt=""/>
+                    <div class="thumbnail-minimal-caption"></div></a>
+                  </div>
+                }@else {
+                  <div></div>
+                }
+            </div>
+          
+            }
+          }
+          <div  style="position: absolute; right: 10px; bottom: 10px;" *ngIf="property.autherIllustration.length > 6">
+            <div class=" btn narrowButton" >
+              <span class="icon novi-icon icon-md mdi mdi-file-image" style="height: 18px; margin-bottom: -4px;font-size: 16px;"></span>
+              + {{ property.autherIllustration.length - 6}}
+            </div>
+        </div>
+        </div>
+        <div class="col-md-10 col-lg-6 col-xl-6 main-image"><img class="img-responsive" src="images/careers-1-570x388.jpg" alt="" width="570" height="388"/>
+        </div>
+      </div>
+      <div class="row row-x-10 logement-details" data-lightgallery="group">
+
+        <div class="col-md-9">
+          <div class="logement-description">
+            <h5>description</h5>
+            <p></p>
+            <pre>{{property.description}}</pre>
+          </div>
+          
+          <div class="logement-description">
+            <h5>Localisation</h5>
+            <div style="font-weight: normal;" > {{ property.adresse }}</div>
+            <h5>Property Summary</h5>
+            <p></p>
+            <div class="property-summary">
+                            
+              <div class="property-summary-item">
+                  <div class="label">Property Type</div>
+                  <div class="value">Single Family</div>
+              </div>
+          
+              <div class="property-summary-item">
+                  <div class="label">Building Type</div>
+                  <div class="value">House</div>
+              </div>
+          
+              <div class="property-summary-item" >
+                  <div class="label">Storeys</div>
+                  <div class="value">2</div>
+              </div>
+          
+              <div class="property-summary-item" >
+                  <div class="label">Community Name</div>
+                  <div class="value">Painswick South</div>
+              </div>
+          
+              <div class="property-summary-item" >
+                  <div class="label">Title</div>
+                  <div class="value">Freehold</div>
+              </div>
+          
+              <div class="property-summary-item" >
+                  <div class="label">Land Size</div>
+                  <div class="value">37.93 x 108.28 FT|under 1/2 acre</div>
+              </div>
+          
+              <div class="property-summary-item" >
+                  <div class="label">Annual Property Taxes</div>
+                  <div class="value">$4,209<span class="listingCADLabel" style="display:none"> (CAD)</span></div>
+              </div>
+          
+              <div class="property-summary-item" >
+                  <div class="label">Parking Type</div>
+                  <div class="value">Garage</div>
+              </div>
+          
+              <div class="property-summary-item" >
+                  <div class="label">Published since</div>
+                  <div class="value">12 minutes</div>
+              </div>
+          
+            </div>
+          </div>
+
+          <ul class="post-modern-meta">
+            <li><a class="button-winona" href="#"> {{ property.prix }}</a></li>
+            <li>{{ property.surface }} </li>
+            <li> {{ property.nombreChambre }} Bedrooms</li>
+          </ul>
+          <span class="post-modern-title" > {{ property.adresse }}</span>
+        </div>
+        <div class="col-md-3">
+          <div class="logement-description" >
+            <div class="text-center">contact</div>
+            
+          </div>
+        </div>
+
+
+     
+
+
+      </div>
+    </div>
+  </section>

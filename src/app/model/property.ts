@@ -1,6 +1,7 @@
 
 
 export class Property{
+    title:string;
     description:string;
     illustration:string;
     autherIllustration:string[];
@@ -10,8 +11,9 @@ export class Property{
     surface:string;
     pDate:string;
 
-    constructor( description:string, illustration:string, 
+    constructor( title:string,description:string, illustration:string, 
         autherIllustration:string[],prix:string,  adresse:string, nombreChambre:number,  surface:string, pDate:string){
+         this.title = title
             this.adresse = adresse;
             this.description = description;
             this.illustration =illustration;

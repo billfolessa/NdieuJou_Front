@@ -12,7 +12,7 @@ import { NgFor } from '@angular/common';
 })
 export class PropertyItemComponent implements OnInit{
 
-  @Input() property:Property = new Property("","",[],"","",0,"","");
+  @Input() property:Property = new Property("","","",[],"","",0,"","");
   
  ngOnInit(){
  }

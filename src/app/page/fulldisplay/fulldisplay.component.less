@@ -1,0 +1,239 @@
+
+.fulldisplay{
+    .header {
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #f2f2f2;
+        border-bottom: 2px solid #ddd;
+
+        .breadcrumbs-custom-path{
+            margin-bottom: 20px;
+
+            li::after{
+                color: #aeb1bf;
+            }
+        }
+       
+      }
+
+      .container-image{
+
+        margin-top: 30px;
+
+        .illustration-plus{
+            display: flex;
+            .col-md-4{
+                padding-right: 5px;
+                padding-left: 5px;
+            }
+    
+            .column-item{
+                display: flex;
+                flex-direction: column;
+                >div{
+                    flex:1;
+    
+                    &:last-of-type{
+                        align-content: flex-end;
+                    }
+                }
+            }
+            
+        }
+      }
+      .logement-details{
+        .logement-description{
+            font-family: 'Roboto', sans-serif;
+            max-width: 1200px;
+            margin: auto;
+            background-color: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 20px;
+            margin-bottom: 30px;
+
+            .property-summary{
+                display: flex;
+                flex-direction: row;
+                align-content: flex-start;
+                flex-wrap: wrap;
+
+                .property-summary-item{
+                    padding-right: 2%;
+                    padding-bottom: 15px;
+                    -ms-flex-grow: 0;
+                    flex-grow: 0;
+                    -ms-flex-basis: 23%;
+                    flex-basis: 23%;
+
+                    .label{
+                        font-weight: bold !important;
+                        padding-bottom: 2px;
+                    }
+                    .value{
+                        font-weight: normal !important;
+                    }
+                }
+            }
+        }
+      }
+    
+    pre{
+        white-space: pre-wrap;
+        font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+}
+
+@media  (max-width: 991px) {
+
+.fulldisplay{
+    .illustration-plus{
+        .column-item{
+            >div{
+                &:first-of-type{
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+        
+    .container-image{
+        flex-direction: column-reverse;
+        .main-image{
+            margin-bottom: 10px;
+        }
+    }
+}
+    
+}
+
+
+
+
+
+
+
+
+
+
+.logement-detailsf {
+    font-family: 'Roboto', sans-serif;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .header {
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .header h1 {
+    color: #333;
+    font-size: 28px;
+    flex: 1;
+  }
+  
+  .prix {
+    display: flex;
+    align-items: center;
+  }
+  
+  .price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #28a745;
+    margin-right: 20px;
+  }
+  
+  .reserve-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .reserve-btn:hover {
+    background-color: #218838;
+  }
+  
+  .image-gallery {
+    padding: 20px;
+  }
+  
+  .main-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .thumbnail-gallery {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .thumbnail {
+    width: 30%;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .thumbnail img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .thumbnail:hover {
+    transform: scale(1.05);
+  }
+  
+  .details {
+    padding: 20px;
+    background-color: #fafafa;
+  }
+  
+  .details ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .details li {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .contact-section {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .contact-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .contact-btn:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,10 +1,10 @@
 export class FilterOption{
-    sortBy:String[];
-    pDate:String[];
-    localisation:String[];
-    category:String[];
+    sortBy:string[];
+    pDate:string[];
+    localisation:string[];
+    category:string[];
 
-    constructor(sortBy:String[],pDate:String[], localisation:String[],category:String[]){
+    constructor(sortBy:string[],pDate:string[], localisation:string[],category:string[]){
        this.sortBy  = sortBy;
        this.pDate = pDate;
        this.localisation = localisation;
