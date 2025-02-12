@@ -1,6 +1,7 @@
 
 
 export class Property{
+    id:string="";
     title:string;
     description:string;
     illustration:string;
@@ -8,11 +9,17 @@ export class Property{
     prix:string
     adresse:string;
     nombreChambre:number;
-    surface:string;
+    LandSize:string;
     pDate:string;
+    propertyType:string = "";
+    buildingType:string = "";
+    storeys:string = "";
+    propertyStatus:string = "";
+    propertyTaxes:string = "";
+    ParkingType:string = "";
 
     constructor( title:string,description:string, illustration:string, 
-        autherIllustration:string[],prix:string,  adresse:string, nombreChambre:number,  surface:string, pDate:string){
+        autherIllustration:string[],prix:string,  adresse:string, nombreChambre:number,  LandSize:string, pDate:string){
          this.title = title
             this.adresse = adresse;
             this.description = description;
@@ -20,7 +27,7 @@ export class Property{
             this.autherIllustration = autherIllustration;
             this.prix = prix;
             this.nombreChambre =nombreChambre;
-            this.surface = surface;
+            this.LandSize = LandSize;
             this.pDate = pDate;
         }
 
@@ -43,6 +50,6 @@ export class Property{
         return this.nombreChambre;
      } 
      getSurface():string{
-        return this.surface;
+        return this.LandSize;
      } 
 }

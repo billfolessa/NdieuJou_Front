@@ -80,7 +80,8 @@ export class AllArticleComponent  implements OnInit{
      "images/typography-2-770x456.jpg",
      ["images/footer-gallery-1-85x85.jpg", "images/footer-gallery-2-85x85.jpg", "images/footer-gallery-3-85x85.jpg", "images/footer-gallery-4-85x85.jpg", "images/footer-gallery-4-85x85.jpg"],
      "$1300/mon","1808 Bolingbroke Pl, Fort Worth, TX 76140",2,"40 Sq. Ft.","2022-09-22T15:00:00")
-      this.listPropertyInternal.push(item);
+     item.id ="1" 
+     this.listPropertyInternal.push(item);
       let item1:Property = new Property("Appartement spacieux à Montréal"," 2023-09-22T15:00:00 Suavitate assentior vituperata eam ut, democritum voluptaria consetetur an mei. Quod maluisset pro ex, eligendi tincidunt complectitur eos ne. Ei cotidieque voluptatibus",
       "images/typography-2-770x456.jpg",
       ["images/footer-gallery-1-85x85.jpg", "images/footer-gallery-2-85x85.jpg", "images/footer-gallery-3-85x85.jpg", "images/footer-gallery-4-85x85.jpg", "images/footer-gallery-4-85x85.jpg"],
@@ -90,6 +91,7 @@ export class AllArticleComponent  implements OnInit{
       "images/typography-2-770x456.jpg",
       ["images/footer-gallery-1-85x85.jpg", "images/footer-gallery-2-85x85.jpg", "images/footer-gallery-3-85x85.jpg", "images/footer-gallery-4-85x85.jpg", "images/footer-gallery-4-85x85.jpg"],
       "$1300/mon","1808 Bolingbroke Pl, Fort Worth, TX 76140",2,"40 Sq. Ft.","2025-09-22T15:00:00")
+      item2.id="2"
       this.listPropertyInternal.push(item2);
       this.listPropertyInternal.push(item);
       this.listPropertyInternal.push(item);

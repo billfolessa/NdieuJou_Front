@@ -8,5 +8,5 @@ export const routes: Routes = [
     {path:"", component:HomeComponent},
     {path:"\properties", component:AllArticleComponent},
     {path:"\contact", component:ContactsComponent},
-    {path:"\property", component:FulldisplayComponent}
+    {path:"property/:idProperty", component:FulldisplayComponent}
 ];

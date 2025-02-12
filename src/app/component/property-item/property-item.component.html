@@ -1,11 +1,14 @@
 <div class="row row-30 property-item"  >
-    <div class="col-md-6 illustration"><img src="images/typography-2-770x456.jpg" alt="" width="770" height="456"/>
+  <div class="col-md-6 illustration">
+    <a class=""  [href]="'property/'+property.id"> 
+      <img src="images/typography-2-770x456.jpg" alt="" width="770" height="456"/>
+    </a>
     </div>
-    <div class="col-md-6 property-detail">
+    <div class="col-md-6 property-detail" >
       <p class="description">{{property.description}}</p>
       <ul class="post-modern-meta">
-        <li><a class="button-winona" href="#"> {{ property.prix }}</a></li>
-        <li>{{ property.surface }} </li>
+        <li> {{ property.prix }}</li>
+        <li>{{ property.LandSize }} </li>
         <li> {{ property.nombreChambre }} Bedrooms</li>
       </ul>
       <span class="post-modern-title" > {{ property.adresse }}</span>

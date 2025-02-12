@@ -57,6 +57,15 @@
 
         <div class="col-md-9">
           <div class="logement-description">
+
+            <ul class="post-modern-meta">
+              <li class="prix-property"> ${{ property.prix }}</li>
+              <li>{{ property.LandSize }} </li>
+              <li> {{ property.nombreChambre }} Bedrooms</li>
+            </ul>
+            <span class="post-modern-title" > {{ property.adresse }}</span>
+
+
             <h5>description</h5>
             <p></p>
             <pre>{{property.description}}</pre>
@@ -71,62 +80,72 @@
                             
               <div class="property-summary-item">
                   <div class="label">Property Type</div>
-                  <div class="value">Single Family</div>
+                  <div class="value">{{property.propertyType}}</div>
               </div>
           
               <div class="property-summary-item">
                   <div class="label">Building Type</div>
-                  <div class="value">House</div>
+                  <div class="value">{{property.buildingType}}</div>
               </div>
           
               <div class="property-summary-item" >
                   <div class="label">Storeys</div>
-                  <div class="value">2</div>
+                  <div class="value">{{property.storeys}}</div> 
               </div>
           
               <div class="property-summary-item" >
-                  <div class="label">Community Name</div>
-                  <div class="value">Painswick South</div>
+                  <div class="label">Bedrooms</div>
+                  <div class="value">{{property.nombreChambre}}</div>
               </div>
           
               <div class="property-summary-item" >
-                  <div class="label">Title</div>
-                  <div class="value">Freehold</div>
+                  <div class="label">Property status</div>
+                  <div class="value">{{property.propertyType}} </div>
               </div>
           
               <div class="property-summary-item" >
                   <div class="label">Land Size</div>
-                  <div class="value">37.93 x 108.28 FT|under 1/2 acre</div>
+                  <div class="value">{{ property.LandSize }}</div>
               </div>
           
               <div class="property-summary-item" >
                   <div class="label">Annual Property Taxes</div>
-                  <div class="value">$4,209<span class="listingCADLabel" style="display:none"> (CAD)</span></div>
+                  <div class="value">${{ property.propertyTaxes }} <span class="listingCADLabel" style="display:none"> (CAD)</span></div>
               </div>
           
               <div class="property-summary-item" >
                   <div class="label">Parking Type</div>
-                  <div class="value">Garage</div>
+                  <div class="value">{{ property.ParkingType }}</div>
               </div>
           
               <div class="property-summary-item" >
-                  <div class="label">Published since</div>
-                  <div class="value">12 minutes</div>
+                  <div class="label">Published date</div>
+                  <div class="value">{{pdateFormat(property)}}</div>
               </div>
           
             </div>
           </div>
-
-          <ul class="post-modern-meta">
-            <li><a class="button-winona" href="#"> {{ property.prix }}</a></li>
-            <li>{{ property.surface }} </li>
-            <li> {{ property.nombreChambre }} Bedrooms</li>
-          </ul>
-          <span class="post-modern-title" > {{ property.adresse }}</span>
         </div>
         <div class="col-md-3">
-          <div class="logement-description" >
+          <div class="logement-description contact" >
             <div class="text-center">contact</div>
+            <div class="d-flex">
+              <app-avatar fullName="Bill Folessa"></app-avatar>
+              <div>
+                <div class="">Bill Folessa</div>
+                <div class="text-center">
+                  4.0 
+                  <span class="icon novi-icon icon-md mdi mdi-star start-member"></span>
+                  <span class="icon novi-icon icon-md mdi mdi-star start-member"></span>
+                  <span class="icon novi-icon icon-md mdi mdi-star start-member"></span>
+                  <span class="icon novi-icon icon-md mdi mdi-star start-member"></span>
+                  <span class="icon novi-icon icon-md mdi mdi-star-outline start-member"></span>
+                </div>
+              </div>
+            </div>
+            <div class="btn-send-message">
+              <a class="btn btn-primary" >Envoyer un message</a>
+            </div>
             
           </div>
         </div>
