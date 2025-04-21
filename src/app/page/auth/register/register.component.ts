@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../../services/auth-service.service';
 import { response } from 'express';
 import { NgIf } from '@angular/common';
@@ -28,7 +28,7 @@ export class RegisterComponent {
 
   onSubmit():void{
     if(this.registerFormGroup){
-      this.authService.register(this.registerFormGroup.getRawValue()).subscribe({
+      this.authService.register(this.registerFormGroup.getRawValue())..subscribe({
         next : (response)=>console.log("register success "+response),
         error: (error)=> {this.errorMessage = "register error"+error;
           console.log(this.errorMessage)},
