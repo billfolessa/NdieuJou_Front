@@ -38,5 +38,10 @@ export class AuthService{
     localStorage.removeItem(this.keyJWTStorate)
   }
 
+  islogged():boolean{
+    const tocken = this.getTocken();
+    return tocken ? true : false;
+  }
+
 
 }

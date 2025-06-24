@@ -28,7 +28,7 @@ export class RegisterComponent {
 
   onSubmit():void{
     if(this.registerFormGroup){
-      this.authService.register(this.registerFormGroup.getRawValue())..subscribe({
+      this.authService.register(this.registerFormGroup.getRawValue()).subscribe({
         next : (response)=>console.log("register success "+response),
         error: (error)=> {this.errorMessage = "register error"+error;
           console.log(this.errorMessage)},
