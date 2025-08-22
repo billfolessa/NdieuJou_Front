@@ -1,7 +1,7 @@
 
 
 
-<div class="container mt-5">
+<!--div class="container mt-5">
     <h2>Inscription</h2>
     <form [formGroup]="registerFormGroup" (ngSubmit)="onSubmit()">
       <div class="mb-3">
@@ -31,6 +31,92 @@
       <button type="submit" class="btn btn-success" [disabled]="registerFormGroup.invalid">S'inscrire</button>
     </form>
     <p class="text-danger mt-2">{{ errorMessage }}</p>
-  </div>
+  </div-->
   
+
+  <section class="section novi-background bg-gray-100">
+    <div class="range justify-content-xl-between">
+      <div class="cell-xl-7  align-self-center container">
+        <div class="row">
+          <div class="col-lg-9 cell-inner">
+            <div class="section-lg">
+              <h3 class="text-uppercase wow-outer"><span class="wow slideInDown">Contact Us</span></h3>
+              <!-- RD Mailform-->
+              <form class="rd-form rd-mailform" [formGroup]="registerFormGroup" (ngSubmit)="onSubmit()" >
+                <div class="row row-10">
+                  <div class="col-md-6 wow-outer">
+                    <div class="form-wrap wow fadeSlideInUp">
+                      <label class="form-label-outside" for="contact-first-name">Prenom</label>
+                      <input type="email" class="form-control" id="firstName" formControlName="firstName">
+                      <div class="text-danger" *ngIf="registerFormGroup.controls['firstName']?.invalid && registerFormGroup.controls['firstName']?.touched">
+                        Vous devez renseigner votre prénom
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 wow-outer">
+                    <div class="form-wrap wow fadeSlideInUp">
+                      <label class="form-label-outside" for="contact-last-name">Nom</label>
+                      <input type="email" class="form-control" id="lastName" formControlName="lastName">
+                      <div class="text-danger" *ngIf="registerFormGroup.controls['lastName']?.invalid && registerFormGroup.controls['lastName']?.touched">
+                        Vous devez renseigner votre nom
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 wow-outer">
+                    <div class="form-wrap wow fadeSlideInUp">
+                      <label class="form-label-outside" for="contact-email">E-mail</label>
+                      <input type="email" class="form-control" id="email" formControlName="email">
+                      <div class="text-danger" type="email" *ngIf="registerFormGroup.controls['email']?.invalid && registerFormGroup.controls['email']?.touched">
+                        E-mail invalide
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 wow-outer">
+                    <div class="form-wrap wow fadeSlideInUp">
+                      <label class="form-label-outside" for="contact-phone">Téléphone</label>
+                      <input type="text" class="form-control" id="phone" formControlName="phone">
+                      <div class="text-danger" *ngIf="registerFormGroup.controls['phone']?.invalid && registerFormGroup.controls['phone']?.touched">
+                        Numéro de téléphone invalide
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 wow-outer">
+                    <div class="form-wrap wow fadeSlideInUp">
+                      <label class="form-label-outside" for="contact-phone">Mot de passe</label>
+                      <input type="password" class="form-control" id="password" formControlName="password">
+                      <div class="text-danger" *ngIf="registerFormGroup.controls['password']?.invalid && registerFormGroup.controls['password']?.touched">
+                        Le mot de passe doit avoir un minimum de 6 caractères
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 wow-outer">
+                    <div class="form-wrap wow fadeSlideInUp">
+                      <label class="form-label-outside" for="contact-phone">Répéter mot de passe</label>
+                      <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword">
+                      <div class="text-danger" *ngIf=" confirmPasswordUser(registerFormGroup)?.mismatch  && registerFormGroup.controls['confirmPassword']?.touched">
+                        Les mots de passe ne correspondent pas
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="group group-middle">
+                  <div class="wow-outer"> 
+                    <button class="btn btn-primary " type="submit" [disabled]="!canSubmitForm() ">Creer mon comptes</button>
+                  </div>
+                </div>
+   
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cell-xl-4 height-fill wow fadeIn d-flex">
+          <div class="align-content-center">
+            <div class="d-flex justify-content-center">
+              <img src="images/logo-default-151x44.png" alt="" width="151" height="44" srcset="images/logo-default-151x44.png 2x">
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
 

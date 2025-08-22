@@ -16,7 +16,7 @@ export const routes: Routes = [
     {path:"login", component:LoginComponent},
     {path:"register", component:RegisterComponent},
     {path:"properties", component:AllArticleComponent},
-    {path:"contact", component:ContactsComponent},
+    {path:"Contacts", component:ContactsComponent},
     {path:"property/:idProperty", component:FulldisplayComponent, canActivate:[authGuard]},
     {path:"admin/setting", component:SettingsComponent, canActivate:[authGuard], data:{role:roles.ADMIN}},
     {path:"dashbord", component:DashbordComponent, 
