@@ -3,21 +3,21 @@ import { LogementState } from './logement/logement.models';
 import { UserDataState } from './user/user.models';
 import { logementReducer } from './logement/logement.reducer';
 import { userDataReducer } from './user/user.reducers';
-import { CredentialState } from './credentials/credentials.models';
-import { credentialReducer } from './credentials/credentials.reducer';
+import { CredentialState } from './credential/credentials.models';
+import { credentialReducer } from './credential/credentials.reducer';
 
-interface AppState{
+export interface AppState{
     logementState: LogementState,
     userDataState: UserDataState
     credentielState : CredentialState
 }
 
-const appSelector = (state: AppState) => state
+ const appSelector = (state: AppState) => state
 
 
 export const logementSelector = createSelector(appSelector,  (appSelectorItem)=>appSelectorItem.logementState);
-export const userDateState = createSelector(appSelector, (appSelectorItem)=>appSelectorItem.userDataState);
-
+export const userDateStateSelector = createSelector(appSelector, (appSelectorItem)=>appSelectorItem.userDataState);
+export const credentialStateSelector = createSelector(appSelector, (appSelectorItem)=>appSelectorItem.credentielState)
 
 export const appReducer : ActionReducerMap<AppState> ={
     logementState : logementReducer,

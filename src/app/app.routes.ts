@@ -8,6 +8,8 @@ import { RegisterComponent } from './page/auth/register/register.component';
 import { authGuard } from './guards/auth.guard';
 import path from 'path';
 import { roles } from './model/roles';
+import { SettingsComponent } from './page/admin/settings/settings.component';
+import { DashbordComponent } from './page/admin/dashbord/dashbord.component';
 
 export const routes: Routes = [
     {path:"", component:HomeComponent},
@@ -16,11 +18,11 @@ export const routes: Routes = [
     {path:"properties", component:AllArticleComponent},
     {path:"contact", component:ContactsComponent},
     {path:"property/:idProperty", component:FulldisplayComponent, canActivate:[authGuard]},
-    {path:"admin/setting", component:undefined, canActivate:[authGuard], data:{role:roles.ADMIN}},
-    {path:"dashbord", component:undefined, 
+    {path:"admin/setting", component:SettingsComponent, canActivate:[authGuard], data:{role:roles.ADMIN}},
+    {path:"dashbord", component:DashbordComponent, 
         children:[
-           { path:"admin", component:undefined, data:{ role:roles.ADMIN}},
-           { path:"user", component:undefined, data:{ role:roles.USER}}
+           { path:"admin", component:DashbordComponent, data:{ role:roles.ADMIN}},
+           { path:"user", component:DashbordComponent, data:{ role:roles.USER}}
         ]
     }
 

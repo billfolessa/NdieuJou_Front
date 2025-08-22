@@ -9,8 +9,8 @@ const userDateStateInit : UserDataState = {
         password:"",
         phone:"",
         picture:"",
-        username:""
-
+        username:"",
+        role : ""
     }
 }
 

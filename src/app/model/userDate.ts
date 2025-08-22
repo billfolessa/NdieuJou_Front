@@ -5,4 +5,5 @@ export interface UserDate{
     address:string,
     username:string,
     picture:string
+    role: string
 } 
