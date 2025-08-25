@@ -1,48 +1,18 @@
-
-
-
-<!--div class="container mt-5">
-    <h2>Inscription</h2>
-    <form [formGroup]="registerFormGroup" (ngSubmit)="onSubmit()">
-      <div class="mb-3">
-        <label for="name" >Nom</label>
-        <input type="text" class="form-control" id="name" formControlName="username">
-        <div *ngIf="registerFormGroup.controls['username']?.invalid && registerFormGroup.controls['username']?.touched" class="text-danger">
-          Le nom doit contenir au moins 3 caractères.
-        </div>
-      </div>
   
-      <div class="mb-3">
-        <label for="email" >Email</label>
-        <input type="email" class="form-control" id="email" formControlName="email">
-        <div *ngIf="registerFormGroup.controls['email']?.invalid && registerFormGroup.controls['email']?.touched" class="text-danger">
-          Un email valide est requis.
-        </div>
-      </div>
-  
-      <div class="mb-3">
-        <label for="password" >Mot de passe</label>
-        <input type="password" class="form-control" id="password" formControlName="password">
-        <div *ngIf="registerFormGroup.controls['password']?.invalid && registerFormGroup.controls['password']?.touched" class="text-danger">
-          Le mot de passe doit contenir au moins 6 caractères.
-        </div>
-      </div>
-  
-      <button type="submit" class="btn btn-success" [disabled]="registerFormGroup.invalid">S'inscrire</button>
-    </form>
-    <p class="text-danger mt-2">{{ errorMessage }}</p>
-  </div-->
-  
-
   <section class="section novi-background bg-gray-100">
     <div class="range justify-content-xl-between">
       <div class="cell-xl-7  align-self-center container">
         <div class="row">
           <div class="col-lg-9 cell-inner">
             <div class="section-lg">
-              <h3 class="text-uppercase wow-outer"><span class="wow slideInDown">Contact Us</span></h3>
+              <h3 class="text-uppercase wow-outer"><span class="wow slideInDown">Créer mon compte</span></h3>
+              <div class="ndieujour-alert-danger" *ngIf='errorMessage != ""'>
+                <p>{{errorMessage}}</p>
+              </div>
+              <app-loading [showLoading]="showLoading"></app-loading>
+              
               <!-- RD Mailform-->
-              <form class="rd-form rd-mailform" [formGroup]="registerFormGroup" (ngSubmit)="onSubmit()" >
+              <form class="rd-form rd-mailform" [formGroup]="registerFormGroup" (ngSubmit)="onSubmit()" *ngIf="showRegisterForm">
                 <div class="row row-10">
                   <div class="col-md-6 wow-outer">
                     <div class="form-wrap wow fadeSlideInUp">
@@ -106,6 +76,22 @@
                 </div>
    
               </form>
+              <div *ngIf="showCheckEmailForm">
+                <h4>Verification Email</h4>
+                <p>Un code de vérification a été envoyé au courriel  {{registerFormGroup.get("email")?.value}}. 
+                  Veuillez saisir le code</p>
+                <div class="col-md-6 wow-outer pl-0">
+                  <div class="form-wrap wow fadeSlideInUp">
+                    <label class="form-label-outside" for="contact-phone">Code</label>
+                    <input type="text" class="form-control" name="checkEmail"  [(ngModel)]="codeCheckEmail">
+                  </div>
+                </div>
+                <div class="group group-middle">
+                  <div class="wow-outer"> 
+                    <button class="btn btn-primary " type="submit"  (click)="checkEmail()">Soumettre</button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -119,4 +105,6 @@
         </div>
     </div>
   </section>
+
+
 
